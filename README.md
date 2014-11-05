@@ -14,6 +14,15 @@ Os objetivos do trabalho é de cunho educacional para despertar nos pais e
 educadores e caminho de adquirir inteligência mais pela experiência do que
 pela consumo de ideias.
 
+No início, Horacio e Ana, tinham o interesse de realizar viagens com suas filhas
+pelo Brasil para contar a História nacional nos seus respectivos marcos históricos,
+porém a ideia se estendeu para a História da Humanidade se tornando financeiramente
+inviável.
+
+A viabilidade se dá ao trazer a imersão da criança no seu imaginário por meio das 
+histórias somado a possibilidade de objetos palpáveis e participação do leitor no
+conteúdo desses contos.
+
 Inspirações
 ===========
 
