@@ -1,0 +1,307 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+/* Custom variables */
+$color-one: #f4396b; 
+$color-title: #919191;
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Lato Light"), local("Lato-Light"), url("https://fonts.gstatic.com/s/lato/v10/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff") format("woff");
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Pacifico";
+}
+
+h4 {
+  font-size: 32px;
+  color: $color-title;
+  letter-spacing: 3px;
+  line-height: 38px;
+}
+
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/******* CUSTOM **********/
+
+body {
+  font-family: "Lato";
+}
+
+.section {
+  padding-top: 45px;
+  padding-bottom: 55px;
+  h4 {
+    padding-bottom: 36px;
+    color: #000000;
+    font-size: 40px;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+  }  
+  .power {
+    font-weight: 900;
+    color: #000000 !important;
+  }
+}
+
+.about {
+  background: #F4396B;
+  color: #FFFFFF;
+  .lead {
+    font-size: 36px;
+    line-height: 46px;
+  }
+  h4 {
+    color: #FFFFFF !important;
+  }
+}
+
+.manifest {
+  .lead {
+    font-size: 36px;
+    line-height: 46px;
+    color: #686868;
+  }  
+  h4 {
+    color: $color-one !important;
+  }  
+}
+
+.header {
+  background-color: $color-one;
+
+  .nav {
+    padding: 30px;
+  }
+  .nav > li > a:hover, .nav > li > a:focus {
+      text-decoration: none;
+      color: #9F1338;
+  }
+  .nav-pills > li > a {
+      border-radius: 4px;
+  }
+  .nav > li > a.btn-main:hover, .nav > li > a.btn-main:focus {
+    border: 1px solid #9F1338;
+  }
+  .nav-pills > li > a.btn-main {
+    border: 1px solid $color-one;
+  }
+  .nav > li > a {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+  }  
+
+  .logo-pro {
+    background: url('../images/cloud_header.png');
+    position: relative;
+    text-align: left;
+    height: 150px;
+    .media, .text {
+      float: left;
+    }
+    .logo {
+      position: relative;
+      width: 160px;
+      margin-left: 70px;
+      margin-top: 10px !important;
+    }
+    .media {
+      position: absolute;
+      top: -17px;
+      left: 0;
+      z-index: 10;
+    }
+    .text {
+      position: relative;
+    }
+  }
+  
+}
+
+.container-fluid-pro {
+   @extend .container-fluid;
+   margin: 0;
+   padding: 0;
+
+  .sprite-landing {
+    background: url('../images/sprite_landing.png') 0 0;
+    width: 256px;
+    height: 256px;
+  }
+
+  .sprite-landing.world {
+    background: url('../images/sprite_landing.png') 0 0;
+  }  
+  .sprite-landing.foods {
+    background: url('../images/sprite_landing.png') -256px 0;
+  } 
+  .sprite-landing.culture {
+    background: url('../images/sprite_landing.png') -512px 0;
+  }   
+  .sprite-landing.science {
+    background: url('../images/sprite_landing.png') -768px 0;
+  }   
+  .row.landing-box {
+    margin-bottom: 70px;
+  }
+  .landing-box {
+    p {
+      font-size: 22px;
+      line-height: 28px;
+      color: $color-title;
+    }
+    h4 {
+      margin-bottom: 21px;
+    }
+  }
+}
+
+.jumbotron-pro {
+  @extend .jumbotron;
+  background-color: $color-one;
+
+  .main-message-container {
+    padding-top: 50px;
+    color: #FFFFFF;
+  }
+
+  .video-explanation {
+    margin-top: 60px;
+    font-size: 84px;
+    a {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    a:hover, a:focus {
+      color: #ffffff;
+    }
+  }
+
+}
+
+/* pop-ups */
+
+.popup-full-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+
+/* Space out content a bit */
+body {
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 60px;
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* Responsive: Medium screen and up */
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 60px;
+    max-width: 960px;
+  }
+}
+
+/* Responsive: Medium screen and up */
+@media screen and (min-width: 1152px) {
+  .container {
+    padding: 60px;
+    max-width: 1088px;
+  }
+}
+
+/* Responsive: Medium screen and up */
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 60px;
+    max-width: 1216px;
+  }
+}
