@@ -5,7 +5,7 @@ O projeto foi criado por Horacio e Ana Thereza Ibrahim afim
 de permitir que as suas filhas Anna Letícia Ibrahim e Maria Eduarda Ibrahim
 tivessem experiências prévias com culturas distintas além da regional. Para
 que pudessem assimilar e acomodar as interpretações dos objetos de interação
-como pessoas, meio ambiente, problemas e soluções pela interculturalidade.
+como pessoas, meio ambiente, problemas, soluções, etc. pela interculturalidade.
 
 Objetivos
 =========
