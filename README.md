@@ -21,8 +21,8 @@ pelo Brasil para contar a História nacional nos seus respectivos marcos histór
 porém a ideia se estendeu para a História da Humanidade se tornando financeiramente
 inviável.
 
-A viabilidade se dá ao trazer a imersão da criança no seu imaginário por meio das 
-histórias somado a possibilidade de objetos palpáveis e a participação do leitor na 
+A viabilidade se dá ao levar a criança para uma imersão no seu imaginário por meio das 
+histórias somando-se a possibilidade de objetos palpáveis, a participação do leitor na 
 construção desses objetos e como parte da narrativa.
 
 Inspirações
