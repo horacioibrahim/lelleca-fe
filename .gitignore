@@ -59,8 +59,15 @@ target/
 .pydevproject
 .metadata/
 
+## Yeoman Setup
+.bowerrc
+.editorconfig
+.gitattributes
+.jshintrc
+.sass-cache/
+.tmp/
+.yo-rc.json
 # Node.js
 node_modules
-
 # Bower
 bower_components
