@@ -11,8 +11,10 @@ Objetivos
 =========
 
 O objetivo do trabalho é de cunho educacional para despertar nos pais e 
-educadores um caminho onde adquirir inteligência deve ser estimulado mais 
+educadores um caminho onde adquirir inteligência deve ser estimulada mais 
 pela experiência do que pela consumo de ideias, assim com base no construtivismo. 
+E pela cocriação social de um sistema de crenças multicultural para permitir
+a compreensão de valores divergentes que podem culminar para soluções mais eficazes.
 
 No início, Horacio e Ana, tinham o interesse de realizar viagens com suas filhas
 pelo Brasil para contar a História nacional nos seus respectivos marcos históricos,
