@@ -22,8 +22,8 @@ porém a ideia se estendeu para a História da Humanidade se tornando financeira
 inviável.
 
 A viabilidade se dá ao trazer a imersão da criança no seu imaginário por meio das 
-histórias somado a possibilidade de objetos palpáveis e a participação do leitor no 
-conteúdo desses contos.
+histórias somado a possibilidade de objetos palpáveis e a participação do leitor na 
+construção desses objetos e como parte da narrativa.
 
 Inspirações
 ===========
