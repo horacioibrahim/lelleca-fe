@@ -10,23 +10,23 @@ como pessoas, meio ambiente, problemas e soluções pela interculturalidade.
 Objetivos
 =========
 
-Os objetivos do trabalho é de cunho educacional para despertar nos pais e 
-educadores e caminho de adquirir inteligência mais pela experiência do que
-pela consumo de ideias.
+O objetivo do trabalho é de cunho educacional para despertar nos pais e 
+educadores um caminho onde adquirir inteligência deve ser estimulado mais 
+pela experiência do que pela consumo de ideias, assim com base no construtivismo. 
 
 No início, Horacio e Ana, tinham o interesse de realizar viagens com suas filhas
 pelo Brasil para contar a História nacional nos seus respectivos marcos históricos,
 porém a ideia se estendeu para a História da Humanidade se tornando financeiramente
 inviável.
 
-A viabilidade se dá ao trazer a imersão da criança no seu imaginário por meio das 
-histórias somado a possibilidade de objetos palpáveis e participação do leitor no
-conteúdo desses contos.
+A viabilidade se dá ao trazer a imersão da criança no seu imaginário representativo
+por meio das histórias somado a possibilidade de objetos palpáveis e participação do 
+leitor no conteúdo desses contos.
 
 Inspirações
 ===========
 
 Várias personalidades influenciam esse trabalho. Podemos esquecer aqui algumas
 delas, mas nesse momento que digito esse texto, lembro-me de: Piaget, Vygotsky,
-Maria Montessori, Paulo Freiro, Anísio Teixeira e muitos outros.
+Maria Montessori, Paulo Freire, Anísio Teixeira e muitos outros.
 
