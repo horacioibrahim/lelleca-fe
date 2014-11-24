@@ -29,6 +29,6 @@ Inspirações
 ===========
 
 Várias personalidades influenciam esse trabalho. Podemos esquecer aqui algumas
-delas, mas nesse momento que digito esse texto, lembro-me de: Piaget, Vygotsky,
+delas, mas nesse momento que digito esse texto, lembro-me de: Henri Wallon, Piaget, Vygotsky,
 Maria Montessori, Paulo Freire, Anísio Teixeira e muitos outros.
 

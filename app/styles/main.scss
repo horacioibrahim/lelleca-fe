@@ -7,6 +7,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /* Custom variables */
 $color-one: #f4396b; 
 $color-title: #919191;
+$size_w_container_to_1152: 1088px;
+$padding_container_to_1152: 60px;
 
 @font-face {
   font-family: "Lato";
@@ -14,6 +16,23 @@ $color-title: #919191;
   font-weight: 300;
   src: local("Lato Light"), local("Lato-Light"), url("https://fonts.gstatic.com/s/lato/v10/kcf5uOXucLcbFOydGU24WALUuEpTyoUstqEm5AMlJo4.woff") format("woff");
 }
+
+// Navigation
+.nav-left-menu {
+  top: 250px;  
+  left: 4px;
+  padding: 5px;
+  border-radius: 0px 6px 6px 0;
+  li {
+    background-color: #919191;
+    border: 0px solid #FFF;
+  }
+  li.active {
+    background-color: rgba(50, 196, 50, 1);
+  }
+}
+
+// Titulos
 
 h1, h2, h3, h4, h5 {
   font-family: "Pacifico";
@@ -25,7 +44,6 @@ h4 {
   letter-spacing: 3px;
   line-height: 38px;
 }
-
 
 .browsehappy {
   margin: 0.2em 0;
@@ -56,6 +74,10 @@ body {
 }
 
 .about {
+  .people {
+    padding-top: 45px;
+  }
+
   background: #F4396B;
   color: #FFFFFF;
   .lead {
@@ -65,6 +87,11 @@ body {
   h4 {
     color: #FFFFFF !important;
   }
+
+  h3.profile {
+    margin-top: 0px;
+  }
+
 }
 
 .manifest {
@@ -78,8 +105,19 @@ body {
   }  
 }
 
+.lead.mini {
+  font-size: 1.3em;
+  line-heigth: 0 !important;
+  .description {
+    line-heigth: 0 !important;
+    font-size: 0.8em;
+  }
+}
+
+
 .header {
   background-color: $color-one;
+  overflow: visible;
 
   .nav {
     padding: 30px;
@@ -127,10 +165,12 @@ body {
       position: relative;
     }
   }
-  
-}
+}   
 
 .container-fluid-pro {
+   /* Matenha simples suficiente para poder
+   ser herdado por outros classes */
+
    @extend .container-fluid;
    margin: 0;
    padding: 0;
@@ -165,7 +205,7 @@ body {
     h4 {
       margin-bottom: 21px;
     }
-  }
+  } 
 }
 
 .jumbotron-pro {
@@ -256,6 +296,144 @@ body {
   }
 }
 
+/**********************/
+/***** BEGIN Shop *****/
+/**********************/
+
+#shop {
+  background: url('../images/body_bg_pink.gif') repeat scroll 0% 0% transparent;
+  position: relative;
+  z-index: 0;
+
+  .container-fluid-shop {
+    @extend .container-fluid-pro; 
+  }  
+  .container {
+    background-color: #FFFFFF;
+  }
+  
+  .container-top {
+      padding: 0px !important;
+  }
+
+  .headerPlace {
+    float: right;
+  }
+
+  .headerPlaceRight {}
+  .headerPlaceMiddle {}
+  .headerPlaceLeft {}
+
+  .searchBar {
+    padding: 30px;
+  }
+
+  .header {
+    @extend .header;
+    /* nao herda */
+    background: none;
+    border-bottom: 0px !important;
+    padding: none;
+    margin-bottom: -10px !important;
+    .logo-pro {
+      background-image: none;
+      height: 120px;
+      .logo {
+          position: relative;
+          width: 150px;
+          margin-left: 24px;
+          margin-top: 16px !important;
+        }
+    }
+  }
+
+  #sitenav {
+    // Produtos, Moldes, Tutoria
+    width: 100%;
+    height: 63px;
+    float: left;
+    margin-top: -($padding_container_to_1152 + 4px);
+    position: relative;
+    background: url('../images/barbg.png') repeat-x scroll 0% 0% transparent;
+    z-index: 1;
+    .header_nav_right, .header_nav_left {
+        position: absolute;
+        left: -23px;
+        width: 23px;
+        height: 67px;
+        background: url('../images/barbg.png') no-repeat scroll 0px -150px transparent;
+    }    
+    .header_nav_right {
+      left: $size_w_container_to_1152;
+      width: 25px;
+      background-position: right -150px;    
+    }
+    .header_nav_left {
+
+    }
+    .siteNavBar {
+      height: 63px;
+      position: relative;
+      z-index: 1;
+      float: left;
+    }
+    .siteNavLink {
+        text-decoration: none;
+        text-align: center;
+        font-size: 13px;
+        color: #4C4C4C;
+        background: url('../images/barbg.png') no-repeat scroll right -95px transparent;
+        display: block;
+        height: 52px;
+        white-space: nowrap;
+        a span {
+            font-family: ProximaBold,Arial;
+            text-transform: uppercase;
+            display: table-cell;
+            cursor: pointer;
+            line-height: 13px;
+            vertical-align: middle;
+        }        
+    }
+    .siteNavLi {
+      float: left;
+      position: relative;
+      height: 52px;
+      padding: 4px 0px 6px;  
+      
+      .menuTitle {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      a {
+        span {
+          text-transform: uppercase;
+          display: table-cell;
+          cursor: pointer;
+          line-height: 13px;
+          vertical-align: middle;
+          font-weight: bold;
+        }
+      }
+
+      .siteNavLinkHeight {
+          height: 54px;
+          width: 0px;
+      }      
+    }        
+  }
+
+  .catalog {
+    padding-top: 25px;
+  }
+
+}
+
+/***** END Shop *******/
+
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -293,9 +471,15 @@ body {
 /* Responsive: Medium screen and up */
 @media screen and (min-width: 1152px) {
   .container {
-    padding: 60px;
-    max-width: 1088px;
+    padding: $padding_container_to_1152;
+    max-width: $size_w_container_to_1152;
   }
+  
+  #shop #sitenav {
+    width: $size_w_container_to_1152;
+    margin-left: -$padding_container_to_1152; // compensa o padding anterior
+  }
+
 }
 
 /* Responsive: Medium screen and up */
