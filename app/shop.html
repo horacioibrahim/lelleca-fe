@@ -57,7 +57,7 @@
             <!-- search bar -->
             <div class="searchBar headerPlace headerPlaceMiddle col-lg-6">
                 <div class="input-group input-group-lg">
-                  <input type="text" class="form-control">
+                  <input ng-model="q" type="text" class="form-control">
                   <span class="input-group-btn">
                     <button class="btn btn-primary" type="button">
                       <i class="glyphicon glyphicon-search"></i>
@@ -93,18 +93,87 @@
                  
         </div>              
  
+        <!-- catalog -->
         <div class="row catalog">
-
           <div class="row">
-            <div class="col-sm-6 col-md-4" dir-paginate="p in catalog | itemsPerPage:9">
+            <div class="col-sm-6 col-md-4" dir-paginate="p in catalog | filter:q | itemsPerPage:9">
               <div class="thumbnail">
-                <img ng-src="{{ p.images.thumb }}" alt="...">
+                <a href="" ng-click="productShow(p.pid)">
+                  <div ng-show="p.images.length">
+                    <img ng-src="{{ p.images[0].full }}" alt="{{ p.title }}">
+                  </div>
+                  <div ng-hide="p.images.length">
+                    <img src="images/sample/300x300_empty.gif" alt="{{ p.title }}">
+                  </div>
+                </a>
                 <div class="caption">
-                  <h3>{{ p.name }}</h3>
-                  <p>{{ p.short_desc }}</p>
+                  <h3 class="product_title">{{ p.title }}</h3>
+                  <p class="short_desc">{{ p.short_desc | limitTo:100 }}</p>
                   <p><a href="#" class="btn btn-primary" role="button">Eu Quero!</a> <a href="#" class="btn btn-default" role="button">Gostei&nbsp;<i class="glyphicon glyphicon-heart"></i>&nbsp<span class="likeCounter">{{ p.likes }}</span></a></p>
                 </div>
               </div>
+              <!-- modal preview -->
+                <div id="product-modal-lg-{{ p.pid }}" class="modal fade product-modal" tabindex="-1" role="dialog" aria-labelledby="productModal" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">{{ p.title }}</h4>
+                      </div>        
+                      <div class="modal-body">            
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6 col-lg-1" data-expression="{{ mainImg = p.images[0].full }}">
+                            <ul class="product-thumbs list-unstyled">
+                              <li ng-repeat="img in p.images | limitTo: 4">
+                                  <img ng-src="{{ img.thumb }}" ng-click="setImage(p.pid, img.full)">
+                                  <div ng-class="{true: 'active'}[mainImg === img.full]" class="product-thumb-selected">&nbsp;</div>
+                                  ::{{ mainImg}}<br>
+                                  ::{{ img.full }}
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="col-sm-12 col-md-6 col-lg-5 text-center">
+                            <div ng-show="p.images.length">
+                            <!-- It need be variable -->
+                              <img id="productIDforImg-{{ p.pid }}" ng-src="{{ mainImg }}" alt="{{ p.title }}">
+                            </div>
+                            <div ng-hide="p.images.length">
+                              <img src="images/sample/300x300_empty.gif" alt="{{ p.title }}">
+                            </div>
+                          </div>
+                          <!-- explicit action -->
+                          <div class="col-sm-12 col-md-6 col-lg-6">
+                              <h6 class="title">{{ p.title }}</h6>
+                              <ul class="list-inline list-stars">
+                                <li ng-repeat="icon_star in listStars(p.stars) track by $index">
+                                  <i class="glyphicon glyphicon-star {{ icon_star }}" ></i>
+                                </li>
+                              </ul>
+                              <p class="price top-delimiter">
+                                 R{{ p.price | currency}}
+                              </p>
+                              <p class="installments">
+                                em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 com juros R$ 197,10 à vista (10% de desconto) 
+                              </p>
+                              <div class="purchase-actions">
+                                <button type="button" class="btn btn-primary btn-lg">Adicionar</button>
+                              </div>
+                              <p class="shipping-info top-delimiter">
+                              <span>Envio:</span> {{ p.customer_commit }} dia(s) útil(eis)<br />
+                              Frete: <span class="free-shipping" ng-show="p.freeShipping">grátis</span> <span ng-hide="p.freeShipping" class="calc-shipping"><a href="#">calcular</a></span>
+                              </p>
+                          </div>                        
+                        </div>
+                        <div class="row top-delimiter">
+                          <!-- long description or tabs with specifications -->
+                          <div class="col-sm-12 col-md-12 col-lg-12">
+                            <p>{{ p.description }}</p>
+                          </div>                             
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>              
             </div> 
           </div>   
           <div class="row">

@@ -7,6 +7,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /* Custom variables */
 $color-one: #f4396b; 
 $color-title: #919191;
+$color-disable: #919191;
+$color-yellow: #FCE600;
 $size_w_container_to_1152: 1088px;
 $padding_container_to_1152: 60px;
 
@@ -56,6 +58,16 @@ h4 {
 
 body {
   font-family: "Lato";
+}
+
+p {
+  // Add a custom color before to inherit
+  font-size: 22px;
+  line-height: 28px;
+}
+
+[ng-click] {
+  cursor: pointer;
 }
 
 .section {
@@ -198,8 +210,7 @@ body {
   }
   .landing-box {
     p {
-      font-size: 22px;
-      line-height: 28px;
+      @extend p;
       color: $color-title;
     }
     h4 {
@@ -304,6 +315,15 @@ body {
   background: url('../images/body_bg_pink.gif') repeat scroll 0% 0% transparent;
   position: relative;
   z-index: 0;
+
+  p.short_desc {
+    font-size: 16px;
+    min-height: 46px;
+  }
+
+  .product_title {
+    height: 53px;
+  }
 
   .container-fluid-shop {
     @extend .container-fluid-pro; 
@@ -426,6 +446,72 @@ body {
 
   .catalog {
     padding-top: 25px;
+  }
+
+  .product-modal {
+    .top-delimiter {
+      border-top: 1px solid #EEE;
+      padding: 12px 0px 0px;
+      margin: 12px 0px 0px;
+      clear: both;    
+    }
+
+    .modal-title {
+      color: #000000;
+    }
+    
+    .list-stars {
+      li {
+        padding-left: 0px;
+        padding-right: 1px;
+     }
+    }
+    
+    .glyphicon-star {
+      font-size: 24px;
+    }
+    .glyphicon-star.active { 
+        color: $color-yellow;
+    }
+
+    .glyphicon-star.empty {
+        color: #DBDDE1;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    .price {
+     font-weight: bold;
+    }
+
+    .installments {
+      color: $color-title;
+      font-size: 14px;
+      line-height: 18px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .shipping-info {
+      @extend .installments;
+      color: #000000;
+    }
+    ul.product-thumbs {
+      $thumb-size: 75px; 
+      .product-thumb-selected {
+          position: relative;
+          float: left;
+          height: $thumb-size;
+          margin-top: -$thumb-size;
+      }
+      .product-thumb-selected.active {
+        background-color: $color-one;
+      }
+    } 
   }
 
 }
