@@ -4,9 +4,24 @@ var app = angular.module("store", ['angularUtils.directives.dirPagination']);
 app.controller("storeController", function($scope) {
 	$scope.navBarMenus = menus;
 	$scope.catalog = products;
-	$scope.productShow = productShow;
+	$scope.productShow = productShow; // It calls setImage as an init
 	$scope.listStars = listStars;
-	$scope.setImage = setImage;
+	$scope.setImage = function (pid, imageUrl) {
+		// disable the visualization in highlight to removing .active
+		$('.product-thumb-selected').each(function() {
+			$(this).removeClass('active');
+		});
+		// active highlight. To comparing mainImg with img.full in the template
+		$scope.mainImg = imageUrl;
+		// change src from mainImage and effects animation 
+		var elemImgMain = $('#productIDforImg-' + pid);
+		elemImgMain
+			.fadeOut('fast')
+			.fadeIn('fast', function(){
+				elemImgMain.attr('src', imageUrl);		
+			});
+	};
+
 });
 
 app.config(function(paginationTemplateProvider) {
@@ -16,12 +31,17 @@ app.config(function(paginationTemplateProvider) {
 
 /* function for Controller */
 
-function productShow(pid) {
+function productShow(pid, mainImg) {
+	/* Open the modal with product details and calls setImage to set 
+	default img.
+	*/
 	$("#product-modal-lg-" + pid).modal();
+	setImage(pid, mainImg);
 };
 
 function listStars(stars) {
-	// returns class complement for starts from customer Review
+	/* Returns arrays to shows stars from customer Review.
+	*/
 	var default_size = 5;
 	var lack = default_size - stars;
 	var stars_class = [];
@@ -32,18 +52,20 @@ function listStars(stars) {
 		stars_class.push('empty');
 	};	
 
-	//alert(stars_class);
 	return stars_class;
 };
 
 function setImage(pid, imageUrl) {
-	// disable removing .active
+	/* Used only to initiate the default image in modal product details.
+	The storeController also has a function with same name.
+	*/
+	
+	// disable the visualization in highlight to removing .active
 	$('.product-thumb-selected').each(function() {
 		$(this).removeClass('active');
 	});
-	// active to compare mainImg with img.full in the template
-	this.mainImg = imageUrl;
 
+	// change src from mainImage and effects animation 
 	var elemImgMain = $('#productIDforImg-' + pid);
 	elemImgMain
 		.fadeOut('fast')
@@ -56,6 +78,7 @@ function setImage(pid, imageUrl) {
 
 var menus = ['Brinquedos', 'Livros', 'Roupas', 'Calçados', 'Enxoval', 
 			'Tutoria & Cursos', 'Moldes'];
+			
 var products = [
 	{
 		'pid': 1,
@@ -76,6 +99,8 @@ var products = [
 	 	'stars': 3,
 	 	'freeShipping': true,
 	 	'customer_commit': 2,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',
 	},
 	{
 		'pid': 2,
@@ -121,6 +146,8 @@ var products = [
 		'stars': 4,
 		'freeShipping': false,
 		'customer_commit': 3,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},
 	{	
 		'pid': 3,
@@ -166,6 +193,8 @@ var products = [
 		'stars': 3,
 		'freeShipping': false,
 		'customer_commit': 3,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},
 	{
 		'pid': 4,
@@ -211,6 +240,8 @@ var products = [
 		'stars': 5,
 		'freeShipping': false,
 		'customer_commit': 9,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 5,
@@ -255,6 +286,8 @@ var products = [
 		'stars': 2,
 		'freeShipping': false,
 		'customer_commit': 1,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 6,
@@ -299,6 +332,8 @@ var products = [
 		'stars': 0,
 		'freeShipping': false,
 		'customer_commit': 4,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 7,
@@ -343,6 +378,8 @@ var products = [
 		'stars': 0,
 		'freeShipping': false,
 		'customer_commit': 3,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 8,
@@ -387,6 +424,8 @@ var products = [
 		'stars': 5,
 		'freeShipping': false,
 		'customer_commit': 2,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 9,
@@ -431,6 +470,8 @@ var products = [
 		'stars': 5,
 		'freeShipping': false,
 		'customer_commit': 3,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 10,
@@ -475,6 +516,8 @@ var products = [
 		'stars': 5,
 		'freeShipping': false,
 		'customer_commit': 4,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 11,
@@ -519,6 +562,8 @@ var products = [
 		'stars': 2,
 		'freeShipping': false,
 		'customer_commit': 2,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},	
 	{
 		'pid': 12,
@@ -563,5 +608,7 @@ var products = [
 		'stars': 5,
 		'freeShipping': false,
 		'customer_commit': 10,
+	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},
 	];

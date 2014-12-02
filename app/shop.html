@@ -98,7 +98,7 @@
           <div class="row">
             <div class="col-sm-6 col-md-4" dir-paginate="p in catalog | filter:q | itemsPerPage:9">
               <div class="thumbnail">
-                <a href="" ng-click="productShow(p.pid)">
+                <a href="" ng-click="productShow(p.pid, p.images[0].full)">
                   <div ng-show="p.images.length">
                     <img ng-src="{{ p.images[0].full }}" alt="{{ p.title }}">
                   </div>
@@ -122,13 +122,11 @@
                       </div>        
                       <div class="modal-body">            
                         <div class="row">
-                          <div class="col-sm-12 col-md-6 col-lg-1" data-expression="{{ mainImg = p.images[0].full }}">
+                          <div class="col-sm-12 col-md-6 col-lg-1">
                             <ul class="product-thumbs list-unstyled">
                               <li ng-repeat="img in p.images | limitTo: 4">
                                   <img ng-src="{{ img.thumb }}" ng-click="setImage(p.pid, img.full)">
-                                  <div ng-class="{true: 'active'}[mainImg === img.full]" class="product-thumb-selected">&nbsp;</div>
-                                  ::{{ mainImg}}<br>
-                                  ::{{ img.full }}
+                                  <div ng-class="{true: 'active', false: 'deactive'}[mainImg === img.full]" class="product-thumb-selected">&nbsp;</div>
                               </li>
                             </ul>
                           </div>
