@@ -6,6 +6,9 @@ app.controller("storeController", function($scope) {
 	$scope.catalog = products;
 	$scope.productShow = productShow; // It calls setImage as an init
 	$scope.listStars = listStars;
+	$scope.addItem = addItem;
+	$scope.delItem = delItem;
+
 	$scope.setImage = function (pid, imageUrl) {
 		// disable the visualization in highlight to removing .active
 		$('.product-thumb-selected').each(function() {
@@ -74,6 +77,44 @@ function setImage(pid, imageUrl) {
 		});
 };
 
+function commitDays(product) {
+	/* Quantity of days to ship the product 
+	*/
+	try {
+		if (product.p.customer_commit_each_item) {
+			product.commitDays = product.p.customer_commit * product.quantityItens;
+		}		
+	}
+	catch(err) {
+		console.log("The field customer_commit_each_item not defined");
+	}
+	
+}
+function addItem() {
+	/* Add item before to send for basket */
+
+	try {
+		this.quantityItens += 1;
+		commitDays(this);
+	}
+	catch(err) {
+		this.quantityItens = 0;
+	}
+}
+
+function delItem() {
+	/* Delete item before to send for basket */
+	try {
+		if (this.quantityItens > 1) {
+			this.quantityItens -= 1;
+			commitDays(this);
+		}
+	}
+	catch(err) {
+		this.quantityItens = 1;
+	}
+}
+
 /* Data source */
 
 var menus = ['Brinquedos', 'Livros', 'Roupas', 'Calçados', 'Enxoval', 
@@ -99,7 +140,13 @@ var products = [
 	 	'stars': 3,
 	 	'freeShipping': true,
 	 	'customer_commit': 2,
-	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
+		'customer_requirements': [
+			{
+				'size': true,
+				'opts':['P', 'M', 'G']
+			},
+		], 	 	
+		'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
 	 	com juros R$ 197,10 à vista (10% de desconto)',
 	},
 	{
@@ -146,6 +193,13 @@ var products = [
 		'stars': 4,
 		'freeShipping': false,
 		'customer_commit': 3,
+		'customer_commit_each_item': true,
+		'customer_requirements': [
+			{
+				'size': true,
+				'opts':['P', 'M', 'G']
+			},
+		], 
 	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
 	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},
@@ -193,6 +247,7 @@ var products = [
 		'stars': 3,
 		'freeShipping': false,
 		'customer_commit': 3,
+		'customer_commit_each_item': true,		
 	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
 	 	com juros R$ 197,10 à vista (10% de desconto)',		
 	},

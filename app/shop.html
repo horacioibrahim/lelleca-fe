@@ -151,13 +151,24 @@
                                  R{{ p.price | currency}}
                               </p>
                               <p class="installments">
-                                em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 com juros R$ 197,10 à vista (10% de desconto) 
+                                {{ p.installments }} 
                               </p>
-                              <div class="purchase-actions">
-                                <button type="button" class="btn btn-primary btn-lg">Adicionar</button>
-                              </div>
-                              <p class="shipping-info top-delimiter">
-                              <span>Envio:</span> {{ p.customer_commit }} dia(s) útil(eis)<br />
+                              <!-- button actions -->
+                              <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-12">
+                                  <div class="purchase-actions">
+                                  <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-primary btn-lg">
+                                    Adicionar <span class="badge" ng-init="quantityItens = 1">{{ quantityItens }}</span>
+                                    </button>
+                                    <button type="button" class="btn btn-primary btn-lg" ng-click="addItem()">+</button>
+                                    <button type="button" class="btn btn-primary btn-lg" ng-click="delItem()">-</button>
+                                  </div>
+                                  </div>                                
+                                </div>
+                              </div>                              
+                              <p class="shipping-info top-delimiter" ng-init="commitDays = p.customer_commit">
+                              <span>Envio:</span> {{ commitDays }} dia(s) útil(eis)<br />
                               Frete: <span class="free-shipping" ng-show="p.freeShipping">grátis</span> <span ng-hide="p.freeShipping" class="calc-shipping"><a href="#">calcular</a></span>
                               </p>
                           </div>                        
