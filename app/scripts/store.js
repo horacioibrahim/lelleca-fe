@@ -93,9 +93,25 @@ function commitDays(product) {
 function addItem() {
 	/* Add item before to send for basket */
 
+	var priceInit = this.p.price;
+
 	try {
 		this.quantityItens += 1;
+
+		/***** below rules (coding repeated between add or del) *****/
+		var itens = this.quantityItens; 
+		// commit days
 		commitDays(this);
+		// update price
+		this.price = setCurrentPrice(priceInit, itens)			
+		// set slip bank price
+		this.priceSlipBank = 
+			setSlipBankValue(this.price, this.slipBankDiscount);		
+		// set period value 
+		this.installmentsValue = 
+			setInstallmentsValue(this.quotaInitValue, itens);	
+		//animate
+		animatePrice();
 	}
 	catch(err) {
 		this.quantityItens = 0;
@@ -104,10 +120,26 @@ function addItem() {
 
 function delItem() {
 	/* Delete item before to send for basket */
+	var priceInit = this.p.price;
+
 	try {
 		if (this.quantityItens > 1) {
 			this.quantityItens -= 1;
+
+			/***** below rules (coding repeated between add or del) *****/
+			var itens = this.quantityItens; 
+			// commit days
 			commitDays(this);
+			// update price
+			this.price = setCurrentPrice(priceInit, itens)			
+			// set slip bank price
+			this.priceSlipBank = 
+				setSlipBankValue(this.price, this.slipBankDiscount);		
+			// set period value 
+			this.installmentsValue = 
+				setInstallmentsValue(this.quotaInitValue, itens);	
+			//animate
+			animatePrice();
 		}
 	}
 	catch(err) {
@@ -115,7 +147,47 @@ function delItem() {
 	}
 }
 
-/* Data source */
+function setSlipBankValue(price, discount) {
+	/* Calculates the value to pay by slip bank.
+	
+	:param price: the current value/price (float) of product
+	:param discount: percent of discount as decimal, e.g 5, 10 or 20
+	*/
+	total = price - (price * (discount/100)); // discount is decimal
+	return total;
+}
+
+function setInstallmentsValue(quotaInitValue, quantityItens) {
+	/* Calculates the value of installments. 
+	
+	:param quotaInitValue: the fixed in quota value of installments of product
+	:param quantityItens: variable value defined by user
+	*/
+	return quotaInitValue * quantityItens;
+}
+
+function setCurrentPrice(initPrice, quantityItens) {
+	/* Calculates the price amount.
+
+	:param initPrice: initial price fo product
+	:param quantityItens: variable value defined by user
+	*/
+	return initPrice * quantityItens;
+}
+
+function animateFade(obj) {
+	/* Animates an object jquery */
+	obj
+		.fadeOut('fast')
+		.fadeIn('slow');
+}
+
+function animatePrice() {
+	animateFade($('.priceUn'));
+}
+
+
+/* Data source :: TODO move to separate file */
 
 var menus = ['Brinquedos', 'Livros', 'Roupas', 'Calçados', 'Enxoval', 
 			'Tutoria & Cursos', 'Moldes'];
@@ -135,7 +207,7 @@ var products = [
 		'images': [],
 		'color:': 'vermelho',
 	 	'likes': 25,
-	 	'price': 45.91,
+	 	'price': 10.00,
 	 	'costFree': false,
 	 	'stars': 3,
 	 	'freeShipping': true,
@@ -146,8 +218,15 @@ var products = [
 				'opts':['P', 'M', 'G']
 			},
 		], 	 	
-		'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
-	 	com juros R$ 197,10 à vista (10% de desconto)',
+		'installments': {
+			'active': true,
+			'max': 10,
+			'value': 1.00,
+		},
+		'slip_bank': {
+			'discount_percent': 10, 
+			'value': 9.00,
+		},
 	},
 	{
 		'pid': 2,
@@ -188,7 +267,7 @@ var products = [
 		],
 		'color:': ['azul'],
 		'likes': 30,
-		'price': 32.45,
+		'price': 20.00,
 		'costFree': false,
 		'stars': 4,
 		'freeShipping': false,
@@ -200,8 +279,15 @@ var products = [
 				'opts':['P', 'M', 'G']
 			},
 		], 
-	 	'installments': 'em até 12x de R$ 18,25 ou a partir de 24x R$ 10,40 \
-	 	com juros R$ 197,10 à vista (10% de desconto)',		
+		'installments': {
+			'active': true,
+			'max': 10,
+			'value': 2.00,
+		},
+		'slip_bank': {
+			'discount_percent': 10, 
+			'value': 18.00,
+		},	
 	},
 	{	
 		'pid': 3,

@@ -147,11 +147,12 @@
                                   <i class="glyphicon glyphicon-star {{ icon_star }}" ></i>
                                 </li>
                               </ul>
-                              <p class="price top-delimiter">
-                                 R{{ p.price | currency}}
+                              <p class="price top-delimiter priceUn" ng-init="price = p.price; ">
+                                 {{ price | currency:'R$ '}}
                               </p>
-                              <p class="installments">
-                                {{ p.installments }} 
+                              <p class="installments" ng-init="quotaInitValue = p.installments.value">
+                                em até {{p.installments.max}}x de <span class="priceByInstallment" ng-init="installmentsValue = p.installments.value">{{ installmentsValue | currency:'R$ ' }}</span> ou 
+                                <br>no boleto por <span class="priceSlipBank" ng-init="priceSlipBank = p.slip_bank.value">{{ priceSlipBank | currency:'R$ ' }}</span> à vista (<span class="slipBankDiscount" ng-init="slipBankDiscount= p.slip_bank.discount_percent">{{ slipBankDiscount }}</span>% de desconto)
                               </p>
                               <!-- button actions -->
                               <div class="row">
