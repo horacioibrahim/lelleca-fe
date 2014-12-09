@@ -1,0 +1,58 @@
+{
+	"company": {
+		"title": "Institucional",
+		"links": [{
+  				"link_label": "Formas de Pagamento",
+  				"url": "pages/statics/markdown/payments.md",
+  				"htmlUrl": "pages/statics/html/payments.html",
+  				"anchor": "payments", 
+  				"description": "Alguma coisa simples. payments",
+  				"active": true,
+  				"test_mk": "#Um nome"
+			},
+			{
+  				"link_label": "Quem Somos",
+  				"url": "/pages/statics/markdown/about.md", 
+  				"htmlUrl": "pages/statics/html/payments.html",
+  				"anchor": "aboutus", 
+  				"description": "Alguma coisa Eu temo. aboutus",
+  				"active": true
+			}]
+			
+	},
+	"support": {
+		"title": "Dúvidas",
+		"links": [{
+  				"link_label": "Trocas e Devoluções",
+  				"url": "/pages/statics/markdown/payments.md", 
+  				"htmlUrl": "pages/statics/html/payments.html",
+  				"anchor": "returns",
+  				"description": "Alguma coisa complexa. returns",
+  				"active": true
+			},
+			{
+  				"link_label": "Direito de Arrependimento",
+  				"url": "/pages/statics/markdown/payments.md", 
+  				"htmlUrl": "pages/statics/html/payments.html",
+  				"anchor": "regret",
+  				"description": "Alguma coisa alguma. regret",
+  				"active": true
+			},
+			{
+		  		"link_label": "Disponibilidade dos produtos",
+		  		"url": "/pages/statics/markdown/payments.md",
+		  		"htmlUrl": "pages/statics/html/payments.html", 
+		  		"anchor": "available",
+		  		"description": "Alguma coisa mudou. available",
+		  		"active": true
+			},
+			{
+		  		"link_label": "Política de Entrega",
+		  		"url": "/pages/statics/markdown/payments.md", 
+		  		"htmlUrl": "pages/statics/html/payments.html",
+		  		"anchor": "delivery",
+		  		"description": "Alguma coisa foi feito. delivery",
+		  		"active": true
+			}]
+	}
+}

@@ -60,6 +60,14 @@ body {
   font-family: "Lato";
 }
 
+.made_in_brasilia {
+  font-size: 13px;
+}
+
+.bgwhite {
+  background-color: #FFFFFF;
+}
+
 p {
   // Add a custom color before to inherit
   font-size: 22px;
@@ -328,9 +336,6 @@ body {
   .container-fluid-shop {
     @extend .container-fluid-pro; 
   }  
-  .container {
-    background-color: #FFFFFF;
-  }
   
   .container-top {
       padding: 0px !important;
@@ -351,7 +356,7 @@ body {
   .header {
     @extend .header;
     /* nao herda */
-    background: none;
+    background: #FFFFFF;
     border-bottom: 0px !important;
     padding: none;
     margin-bottom: -10px !important;
@@ -521,7 +526,116 @@ body {
 
 /***** END Shop *******/
 
+/**********************/
+/**** Support page ****/
+/**********************/
 
+#support {
+  background: url('../images/body_bg_pink.gif') repeat scroll 0% 0% transparent;
+  position: relative;
+  z-index: 0;
+
+  .container-fluid-shop {
+    @extend .container-fluid-pro; 
+  }  
+  
+  .container-top {
+      padding: 0px !important;
+  }
+
+  .headerPlace {
+    float: right;
+  }
+
+  .headerPlaceRight {}
+  .headerPlaceMiddle {}
+  .headerPlaceLeft {}
+
+  .searchBar {
+    padding: 30px;
+  }
+
+  .header {
+    @extend .header;
+    /* nao herda */
+    background: #FFFFFF;
+    border-bottom: 0px !important;
+    padding: none;
+    margin-bottom: -10px !important;
+    .logo-pro {
+      background-image: none;
+      height: 120px;
+      .logo {
+          position: relative;
+          width: 150px;
+          margin-left: 24px;
+          margin-top: 16px !important;
+        }
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  .content-markdown {
+      p {
+        font-size: 20px;
+        line-height: 28px;
+      }
+  }
+}
+/***** END Support ****/
+
+/**** Begin Footers ***/
+
+.bigFooter {
+  padding: 20px !important;
+  color: #4C4C4C;
+  background: url('../images/cloud_header_noshadow.png') repeat-x scroll 0% 0% transparent;
+  background-position: 0px -78px;
+
+  .glyphicon {
+    padding-right: 2px;
+  }
+  .glyphicon-heart-empty, .glyphicon-ok-sign {
+    color: $color-one;
+    top: 2px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: "Lato";
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.26);
+  }
+
+  .info {
+    line-height: 26px;
+  }
+
+  .infoSocial {
+
+  }
+
+  .infoCompany {
+
+  }
+
+  .infoPayment {
+
+  }
+
+}
+
+/**** END Footers *****/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

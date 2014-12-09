@@ -1,0 +1,8 @@
+[{"name": "brinquedos", "label": "Brinquedos", "url": "/categoria/brinquedos"},
+ {"name": "livros","label": "Livros", "url": "/categoria/livros"},
+ {"name": "roupas", "label": "Roupas",  "url": "/categoria/roupas"},
+ {"name": "calcados", "label": "Calçados", "url": "/categoria/calcados"},
+ {"name": "enxoval", "label": "Enxoval",  "url": "/categoria/enxoval"},
+ {"name": "tutoria_cursos", "label": "Tutoria & Cursos",  "url": "/categoria/tutoria_cursos"},
+ {"name": "models", "label": "Moldes", "url": "/categoria/models"}
+]

@@ -1,0 +1,30 @@
+<div class="container bigFooter" ng-controller="staticPages">
+  <div class="row section">
+    <div class="info infoSocial col-sm-12 col-md-6 col-lg-3">
+      <img src="images/facebook/fb_box.png" >
+    </div>
+    <div class="info infoCompany col-sm-12 col-md-6 col-lg-3">
+      <h5 class="title">{{ pages.company.title }}</h5>
+      <ul class="list-unstyled">
+        <li ng-repeat="page in pages.company.links">
+          <i class="glyphicon glyphicon-heart-empty"></i> {{ page.link_label }}
+        </li>
+      </ul>
+    </div>
+    <div class="info infoSupport col-sm-12 col-md-6 col-lg-3">
+      <h5 class="title">{{ pages.support.title }}</h5>
+      <ul class="list-unstyled">
+        <li ng-repeat="page in pages.support.links">
+          <i class="glyphicon glyphicon-ok-sign"></i> {{ page.link_label }}
+        </li>
+      </ul>            
+    </div>
+    <div class="info infoPayment col-sm-12 col-md-6 col-lg-3">
+      <h5 class="title">Meios de Pagamento</h5>
+    </div>
+  </div>
+</div> 
+
+<div class="footer smallFooter">
+  <p class="text-center made_in_brasilia">Feito com <span class="glyphicon glyphicon-heart" style='padding-top:2px;'></span> pela equipe da Lelleca.com em Brasília.</p>
+</div>

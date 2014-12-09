@@ -1,0 +1,16 @@
+<div id="sitenav" class="clearfix" ng-controller="navbarController">
+  <div class="header_nav_left"></div>
+  <ul class="siteNavBar list-unstyled" ng-repeat="menu in navBarMenus | limitTo:8">
+    <!-- menus -->
+      <li class="siteNavLi">
+        <a class="siteNavLink">
+          <span class="menuTitle">{{ menu.label }}</span>
+          <span class="siteNavLinkHeight"></span>
+        </a>
+        <!-- TODO: <div class="secNavContent1">
+        </div> -->
+      </li>      
+  </ul>
+  <div class="header_nav_right"></div>
+         
+</div> 

@@ -1,0 +1,96 @@
+  <!doctype html>
+<html class="no-js" ng-app="lellecaPortal">
+  <head>
+    <meta charset="utf-8">
+    <title>Lelleca - Relacionamento</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+  </head>
+  <body id="support" ng-controller="staticPages">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container-fluid-shop">
+    <!-- begin: Header based in shop page -->
+      <div ng-include src="'pages/includes/header.html'"></div>   
+    <!-- end: Header -->
+
+      <div class="container bgwhite">
+
+        <!-- begin: content support -->
+        <div class="row content-support">
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="content-pages-menu" dir-paginate="page in pages | filter:q | itemsPerPage:20">
+              <h5 class="title">{{ page.title }}</h5>
+              <ul class="nav nav-pills">
+                <li ng-class="{ active:tab === link.anchor }" ng-repeat="link in page.links">
+                  <a href ng-click="selecTab(link.anchor)">{{ link.link_label }}</a>
+                </li>
+              </ul>
+            </div>
+          </div> 
+
+          <div class="col-sm-12 col-md-9 col-lg-9">
+            <div class="content-pages-text" ng-repeat="page in pages">
+                <div ng-repeat="link in page.links">
+                  <div class="content-markdown" ng-show="tab === link.anchor">
+                    <!-- content selected -->
+                  <div btf-markdown ng-include="link.url">
+                  </div>                  
+
+                  </div>
+                </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- End: support content -->
+    
+      </div> 
+        
+    </div>
+    <!-- End: All full content: content-fluid-shop -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/showdown/src/showdown.js"></script>
+    <script src="bower_components/angular-markdown-directive/markdown.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <div ng-include src="'pages/includes/google-analytics.html'"></div>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

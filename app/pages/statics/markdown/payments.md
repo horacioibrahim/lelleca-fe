@@ -1,0 +1,26 @@
+## Formas de Pagamentos
+ 
+Para realizar uma compra em nossa loja você precisará realizar seu [cadastro](https://lelleca.com/signup). Depois basta adicionar
+os produtos desejados ao seu carrinho. O frete será calculado durante o processo de compra.
+
+Para acompanhar o andamento do seu pedido [entre](https://lelleca.com/login) na loja com seu e-mail e senha .
+
+O prazo de postagem poderá variar de acordo com cada item. Ao adicionar um produto veja o destaque chamado "Envio". Será 
+considerado o maior prazo de entrega para a contagem dos dias, assim evitamos que você tenha diversos fretes.
+
+**Descontos especiais**: Se a compra for via depósito terá um desconto de 10%. Por boleto 5%. 
+
+**Observação**: Alguns produtos podem ser isentos de descontos especiais. Todas as informações são disponibilizadas antes de finalizada a compra. 
+
+## Contato:
+
+Fan page: [www.facebook.com/LellecaOficial](http://www.facebook.com/LellecaOficial)  
+Site: [lelleca.com](http://lelleca.com)
+
+```
+Endereço: Super Quadra Sul 409, Bloco G, Entrada F CEP: 70258-070
+(61) 98392053 ou (61) --------
+Para melhores informações, em breve disponibilizaremos nossa "Política de entrega".
+```
+
+Boas compras!
