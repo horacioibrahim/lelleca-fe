@@ -6,6 +6,9 @@ app.controller("storeController", function($scope, $http) {
 	$scope.listStars = listStars;
 	$scope.addItem = addItem;
 	$scope.delItem = delItem;
+	// It's used to interchangeable "q" between (shop.html + header.html)
+	$scope.myQuery = ''; 
+	$scope.activatedSearch = true;
 
 	// Define utility functions
 	$scope.setImage = function (pid, imageUrl) {

@@ -1,5 +1,5 @@
   <!doctype html>
-<html class="no-js" ng-app="lellecaPortal">
+<html class="no-js" ng-app="supportPortalPages">
   <head>
     <meta charset="utf-8">
     <title>Lelleca - Relacionamento</title>
@@ -19,7 +19,7 @@
     <!-- endbuild -->
 
   </head>
-  <body id="support" ng-controller="staticPages">
+  <body id="support" ng-controller="supportPages">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -33,7 +33,7 @@
         <!-- begin: content support -->
         <div class="row content-support">
           <div class="col-sm-12 col-md-3 col-lg-3">
-            <div class="content-pages-menu" dir-paginate="page in pages | filter:q | itemsPerPage:20">
+            <div class="content-pages-menu" dir-paginate="page in pages | filter: myQuery | itemsPerPage:20">
               <h5 class="title">{{ page.title }}</h5>
               <ul class="nav nav-pills">
                 <li ng-class="{ active:tab === link.anchor }" ng-repeat="link in page.links">
@@ -91,6 +91,7 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/support.js"></script>
         <!-- endbuild -->
 </body>
 </html>

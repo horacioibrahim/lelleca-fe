@@ -10,9 +10,9 @@
         </ul>
       </div>  
       <!-- search bar -->
-      <div class="searchBar headerPlace headerPlaceMiddle col-lg-6">
+      <div ng-show="activatedSearch" class="searchBar headerPlace headerPlaceMiddle col-lg-6">
           <div class="input-group input-group-lg">
-            <input ng-model="q" type="text" class="form-control">
+            <input ng-model="$parent.myQuery" type="text" class="form-control">
             <span class="input-group-btn">
               <button class="btn btn-primary" type="button">
                 <i class="glyphicon glyphicon-search"></i>

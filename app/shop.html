@@ -24,6 +24,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="container-fluid-shop">
+
     <!-- begin: Header based in shop page -->
       <div ng-include src="'pages/includes/header.html'"></div>   
     <!-- end: Header -->
@@ -32,16 +33,11 @@
         <!-- begin: Navbar based in shop page -->
         <div ng-include src="'pages/includes/navbar.html'"></div> 
         <!-- end: Header based in shop page -->   
-
-        <div id="banner" class="row">
-          
-        </div>         
- 
+        
         <!-- begin: catalog -->
-        <p>Eu sou {{q}}</p>
         <div class="row catalog">
           <div class="row">
-            <div class="col-sm-6 col-md-4" dir-paginate="p in catalog | filter:q | itemsPerPage:9">
+            <div class="col-sm-6 col-md-4" dir-paginate="p in catalog | filter:myQuery | itemsPerPage:9">
               <div class="thumbnail">
                 <a href="" ng-click="productShow(p.pid, p.images[0].full)">
                   <div ng-show="p.images.length">

@@ -1,6 +1,5 @@
 /* AngularJS Handling scop */
-var app = angular.module("lellecaPortal", ['angularUtils.directives.dirPagination', 
-	'btford.markdown']);
+var app = angular.module("lellecaPortal", ['angularUtils.directives.dirPagination']);
 
 app.controller('staticPages', function($scope, $http) {
 
@@ -21,7 +20,6 @@ app.controller('staticPages', function($scope, $http) {
 	};
 
 });
-
 
 /* UNCOMMENT WHEN SETUP LELLECAPORTAL RIGHT/DONE.
 app.config(function(paginationTemplateProvider) {
