@@ -574,8 +574,13 @@ body {
     }
   }
 
-  .title {
+  .title, h1, h2, h3, h4, h5, h5 {
+    font-family: "Lato";
+    text-transform: uppercase;
     font-weight: bold;
+  }
+  
+  .title {
     font-size: 22px;
     line-height: 26px;
   }

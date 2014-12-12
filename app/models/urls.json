@@ -48,7 +48,7 @@
 			},
 			{
 		  		"link_label": "Política de Entrega",
-		  		"url": "/pages/statics/markdown/payments.md", 
+		  		"url": "/pages/statics/markdown/delivery.md", 
 		  		"htmlUrl": "pages/statics/html/payments.html",
 		  		"anchor": "delivery",
 		  		"description": "Alguma coisa foi feito. delivery",
